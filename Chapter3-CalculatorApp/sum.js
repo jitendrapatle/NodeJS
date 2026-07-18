@@ -14,13 +14,10 @@ const sumRequestHandler = (req, res) => {
         res.setHeader('Content-Type', 'text/html');
         res.write(`
 
-                <html>
+        <html>
             <head><title>User section</title> </head>
             <body> 
             <h1>The sum result is ${result} </h1>
-            
-             
-
             </body>
         </html>
                 `);
