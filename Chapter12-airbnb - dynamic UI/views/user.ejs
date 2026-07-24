@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+
+<body class="bg-gradient-to-br from-gray-100 via-white to-pink-50 min-h-screen">
+
+    <!-- Navbar -->
+    <%- include('partials/header') %>
+
+    <!-- Main Content -->
+    <main class="flex items-center justify-center py-16 px-4">
+
+        <div class="w-full max-w-xl bg-white rounded-3xl shadow-2xl p-10">
+
+            <!-- Heading -->
+            <div class="text-center mb-8">
+                <div
+                    class="w-20 h-20 mx-auto bg-gradient-to-r from-rose-500 to-pink-500 rounded-full flex items-center justify-center text-4xl shadow-lg">
+                    🏡
+                </div>
+
+                <h1 class="mt-5 text-4xl font-extrabold text-gray-800">
+                    Register Your Home
+                </h1>
+
+                <p class="mt-2 text-gray-500">
+                    Share your property with travelers around the world.
+                </p>
+            </div>
+
+            <!-- Form -->
+            <form action="/host/add-home" method="POST" class="space-y-6">
+
+                <div>
+                    <label
+                        for="houseName"
+                        class="block text-gray-700 font-semibold mb-2">
+                        House Name
+                    </label>
+
+                    <input
+                        id="houseName"
+                        type="text"
+                        name="houseName"
+                        placeholder="e.g. Cozy Mountain Cabin"
+                        required
+                        class="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-4 focus:ring-rose-200 focus:border-rose-500 outline-none transition duration-300"
+                    >
+                </div>
+
+                <button
+                    type="submit"
+                    class="w-full bg-gradient-to-r from-rose-500 to-pink-500 text-white py-3 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] transition duration-300">
+                    Register Home
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
