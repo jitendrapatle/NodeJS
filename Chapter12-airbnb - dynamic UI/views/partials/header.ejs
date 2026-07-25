@@ -7,18 +7,18 @@
 
             <ul class="flex items-center gap-6">
                 <li>
-                    <a href="/"
-                        class="text-white font-medium hover:bg-white hover:text-red-500 transition duration-300 px-4 py-2 rounded-lg">
+                    <a href="/" 
+                        class="<%= currentPage === 'home'? 'bg-red-900 text-white':'hover:bg-white'%>  font-medium  hover:text-red-500 transition duration-300 px-4 py-2 rounded-lg">
                         Home
                     </a>
                 </li>
 
                 <li>
-                    <a href="/host/add-home"
-                        class="bg-white text-red-500 px-5 py-2 rounded-lg font-semibold hover:bg-red-100 transition">
+                    <a href="/host/add-home" 
+                        class="<%= currentPage === 'addhome'? 'bg-red-900 text-white':'hover:bg-white'%>  font-medium  hover:text-red-500 transition duration-300 px-4 py-2 rounded-lg">
                         + Add Home
                     </a>
-                </li>
+                </li> 
             </ul>
         </nav>
     </header>
