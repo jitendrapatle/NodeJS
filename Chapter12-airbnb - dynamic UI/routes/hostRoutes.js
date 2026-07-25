@@ -6,16 +6,16 @@ const hostRouter = express.Router()
 
 hostRouter.get("/add-home",(req,res,next)=>{ 
     // res.sendFile(path.join(rootDir,'views','user.html'))
-    res.render('user', {pageTitle : "Airbnb - Add Homes"})
+    res.render('add-home', {pageTitle : "Airbnb - Add Homes", currentPage:'addhome'})
 })
 
 const registredHomes = [];
 
 hostRouter.post("/add-home",(req,res,next)=>{  
-    registredHomes.push({houseName : req.body.houseName})
+    registredHomes.push(req.body)
     // res.sendFile(path.join(__dirname,'../','views','user-success.html'))
     
-    res.render('user-success', {pageTitle : "Airbnb - Home added"})
+    res.render('home-added', {pageTitle : "Airbnb - Home added", currentPage:'home-added'})
 })
 
 exports.hostRouter = hostRouter;
