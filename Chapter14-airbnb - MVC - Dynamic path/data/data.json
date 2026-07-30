@@ -1,18 +1,1 @@
-[
-    {
-        "houseName": "Second House",
-        "price": "1999",
-        "location": "Ghaziabad",
-        "rating": "4.9",
-        "photoUrl": "/images/house5.png",
-        "id": "2"
-    },
-    {
-        "houseName": "Summer Home",
-        "price": "1499",
-        "location": "Jaipur",
-        "rating": "4",
-        "photoUrl": "/images/house6.png",
-        "id": "0.3110618897485815"
-    }
-]
+[{"houseName":"First  House 1.0.0.0.2","price":"1999","location":"Ghaziabad","rating":"4.9","photoUrl":"/images/house1.png","id":"2"},{"houseName":"Summer Home 2.222","price":"1499","location":"Jaipur","rating":"4","photoUrl":"/images/house6.png","id":"0.3110618897485815"},{"houseName":"Home 3","price":"Rs- 1500 ","location":"Nasik","rating":"4.5","photoUrl":"/images/house7.png","id":"0.6181846183430253"},{"houseName":"JITENDRARaa","price":"Rs - 1200","location":"Bhopal","rating":"4","photoUrl":"https://a0.muscache.com/im/pictures/hosting/Hosting-1727824231856768206/original/3001b894-e2a7-418e-a52b-a15d33ae16f1.png?im_w=1200","id":"0.9858579081164836"}]
