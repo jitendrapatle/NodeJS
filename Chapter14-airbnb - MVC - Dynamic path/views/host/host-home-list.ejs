@@ -76,10 +76,11 @@
                                 class="mt-6  bg-rose-500 hover:bg-rose-600 text-white p-2 rounded-xl font-semibold transition duration-300">
                                 Edit
                             </a>
-                            <a href="/"
-                                class="mt-6  bg-rose-500 hover:bg-rose-600 text-white p-2 rounded-xl font-semibold transition duration-300">
-                                Delete
-                            </a>
+                            <form action="/host/delete-home/<%= home.id %>" method="POST">
+                                <button type="submit" class="mt-6  bg-rose-500 hover:bg-rose-600 text-white p-2 rounded-xl font-semibold transition duration-300">
+                                    Delete
+                                </button>
+                            </form>
                              
 
                         </div>

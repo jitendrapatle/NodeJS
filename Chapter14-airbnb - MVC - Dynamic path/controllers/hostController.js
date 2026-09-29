@@ -1,8 +1,9 @@
 const Home = require("../models/home-model");
 exports.getAddHome = (req, res, next) => {
-    res.render('host/edit-home', { pageTitle: "Airbnb - Add Homes", 
-        currentPage: 'hosthome',
-    editing: false })
+    res.render('host/edit-home', { 
+        pageTitle: "Add Homes to airbnb", 
+        currentPage: 'addhome',
+        editing: false })
 }
 
 exports.getEditHome = (req, res, next) => {
@@ -16,7 +17,7 @@ exports.getEditHome = (req, res, next) => {
         console.log(homeId, editing, home)
         res.render('host/edit-home', {
             home:home,
-            pageTitle: "Airbnb - Edit Homes",
+            pageTitle: "Airbnb - Edit Homes to airbnb",
             currentPage: 'hosthome',
             editing: editing
         })
@@ -31,6 +32,13 @@ exports.postAddHome = (req, res, next) => {
     home.save()
     res.redirect('/host/host-homes')
 }
+
+exports.postDeleteHome = (req, res, next) => {
+    const homeId =  req.params.homeId;
+    console.log("Delete this Home ID " , homeId)
+    res.redirect('/host/host-home-list')
+}
+
 exports.postEditHome = (req, res, next) => {
     const { id, houseName, price, location, rating, photoUrl } = req.body;
     const home = new Home(houseName, price, location, rating, photoUrl)
