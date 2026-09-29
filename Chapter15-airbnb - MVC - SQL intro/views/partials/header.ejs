@@ -1,0 +1,50 @@
+    <!-- Navbar -->
+    <header class="bg-gradient-to-r from-rose-500 via-pink-500 to-red-500 shadow-lg">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
+            <h1 class="text-3xl font-bold text-white">
+                🏠 Airbnb
+            </h1>
+
+            <ul class="flex items-center gap-6">
+                <li>
+                    <a href="/" 
+                        class="<%= currentPage === 'index'? 'bg-red-900 text-white':'hover:bg-white'%>  font-medium  hover:text-red-500 transition duration-300 px-4 py-2 rounded-lg">
+                        🏠Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/homes" 
+                        class="<%= currentPage === 'home'? 'bg-red-900 text-white':'hover:bg-white'%>  font-medium  hover:text-red-500 transition duration-300 px-4 py-2 rounded-lg">
+                        Home list
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/bookings" 
+                        class="<%= currentPage === 'bookings'? 'bg-red-900 text-white':'hover:bg-white'%>  font-medium  hover:text-red-500 transition duration-300 px-4 py-2 rounded-lg">
+                        Bookings
+                    </a>
+                </li>
+                <li>
+                    <a href="/favourites" 
+                        class="<%= currentPage === 'favourites'? 'bg-red-900 text-white':'hover:bg-white'%>  font-medium  hover:text-red-500 transition duration-300 px-4 py-2 rounded-lg">
+                        Favourites
+                    </a>
+                </li> 
+                
+                <li>
+                    <a href="/host/host-homes" 
+                        class="<%= currentPage === 'host-homes'? 'bg-red-900 text-white':'hover:bg-white'%>  font-medium  hover:text-red-500 transition duration-300 px-4 py-2 rounded-lg">
+                        Host homes
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/host/add-home" 
+                        class="<%= currentPage === 'addhome'? 'bg-red-900 text-white':'hover:bg-white'%>  font-medium  hover:text-red-500 transition duration-300 px-4 py-2 rounded-lg">
+                        + Add Home
+                    </a>
+                </li> 
+            </ul>
+        </nav>
+    </header>

@@ -1,9 +1,11 @@
 const Home = require("../models/home-model");
+
 exports.getAddHome = (req, res, next) => {
-    res.render('host/edit-home', { 
-        pageTitle: "Add Homes to airbnb", 
+    res.render('host/edit-home', {
+        pageTitle: "Add Homes to airbnb",
         currentPage: 'addhome',
-        editing: false })
+        editing: false
+    })
 }
 
 exports.getEditHome = (req, res, next) => {
@@ -16,7 +18,7 @@ exports.getEditHome = (req, res, next) => {
         }
         console.log(homeId, editing, home)
         res.render('host/edit-home', {
-            home:home,
+            home: home,
             pageTitle: "Airbnb - Edit Homes to airbnb",
             currentPage: 'hosthome',
             editing: editing
@@ -27,15 +29,15 @@ exports.getEditHome = (req, res, next) => {
 
 
 exports.postAddHome = (req, res, next) => {
-    const {houseName, price, location, rating, photoUrl } = req.body;
+    const { houseName, price, location, rating, photoUrl } = req.body;
     const home = new Home(houseName, price, location, rating, photoUrl)
     home.save()
     res.redirect('/host/host-homes')
 }
 
 exports.postDeleteHome = (req, res, next) => {
-    const homeId =  req.params.homeId;
-    console.log("Delete this Home ID " , homeId)
+    const homeId = req.params.homeId;
+    console.log("Delete this Home ID ", homeId)
     res.redirect('/host/host-home-list')
 }
 
@@ -50,7 +52,12 @@ exports.postEditHome = (req, res, next) => {
 
 
 exports.getHostHomes = (req, res, next) => {
-    const registredHomes = Home.fetchAllHome((registredHomes) => {
-        res.render('host/host-home-list', { registredHomes: registredHomes, pageTitle: "Host Home List", currentPage: 'host-homes' })
+    const registredHomes = Home.fetchAll().then(([registredHomes]) => {
+        res.render('host/host-home-list', 
+            { 
+                registredHomes: registredHomes, 
+                pageTitle: "Host Home List", 
+                currentPage: 'host-homes' 
+            })
     })
 }

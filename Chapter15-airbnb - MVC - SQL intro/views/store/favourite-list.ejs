@@ -10,8 +10,8 @@
     <!-- Hero Section -->
     <section class="text-center py-14 px-6">
         <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800">
-            Host home
-            <span class="text-rose-500">Perfect Stay</span>
+            Find Your
+            <span class="text-rose-500">Favourites Stay</span>
         </h1>
 
         <p class="mt-4 text-md text-gray-600 max-w-2xl mx-auto">
@@ -24,10 +24,10 @@
     <main class="max-w-7xl mx-auto px-6 pb-12">
 
         <h2 class="text-3xl font-bold text-gray-800 mb-8">
-            Registered Homes
+            Favourites Homes
         </h2>
 
-        <% if(registredHomes.length===0){ %>
+        <% if(favHomes.length===0){ %>
 
             <div class="bg-white rounded-xl shadow-md p-10 text-center">
                 <h3 class="text-2xl font-semibold text-gray-600">
@@ -43,7 +43,7 @@
 
             <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
-                <% registredHomes.forEach(home=>{ %>
+                <% favHomes.forEach(home=>{ %>
 
                     <div
                         class="bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300 overflow-hidden">
@@ -64,7 +64,8 @@
                                 <br>
                                 <small>📍 <%= home.location %></small>
                                 <p>💰 <%= home.price%></p>
-                                <p>⭐ <%= home.rating%></p> 
+                                <p>⭐ <%= home.rating%></p>
+                                <p> <%= home.photo %></p>
                             </h3>
 
                             <p class="text-gray-500 mt-2">
@@ -72,16 +73,11 @@
                                 welcoming atmosphere.
                             </p>
 
-                            <a href="/host/edit-home/<%=home.id%>?editing=true"
+                            <a href="/home/<%=home.id%>"
                                 class="mt-6  bg-rose-500 hover:bg-rose-600 text-white p-2 rounded-xl font-semibold transition duration-300">
-                                Edit
+                                View Home
                             </a>
-                            <form action="/host/delete-home/<%= home.id %>" method="POST">
-                                <button type="submit" class="mt-6  bg-rose-500 hover:bg-rose-600 text-white p-2 rounded-xl font-semibold transition duration-300">
-                                    Delete
-                                </button>
-                            </form>
-                             
+                            
 
                         </div>
 

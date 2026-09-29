@@ -10,7 +10,7 @@
     <!-- Hero Section -->
     <section class="text-center py-14 px-6">
         <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800">
-            Host home
+            Find Your
             <span class="text-rose-500">Perfect Stay</span>
         </h1>
 
@@ -52,7 +52,7 @@
                         <div
                             class="h-50 bg-gradient-to-r from-rose-400 via-pink-400 to-orange-300 flex items-center justify-center">
 
-                            <img src="<%= home.photoUrl %>" alt="<%= home.houseName %>" class="w-full h-48 object-cover">
+                            <img src="/<%= home.photoUrl %>" alt="<%= home.houseName %>" class="w-full h-48 object-cover">
 
                         </div>
 
@@ -64,7 +64,8 @@
                                 <br>
                                 <small>📍 <%= home.location %></small>
                                 <p>💰 <%= home.price%></p>
-                                <p>⭐ <%= home.rating%></p> 
+                                <p>⭐ <%= home.rating%></p>
+                                <p> <%= home.photo %></p>
                             </h3>
 
                             <p class="text-gray-500 mt-2">
@@ -72,16 +73,12 @@
                                 welcoming atmosphere.
                             </p>
 
-                            <a href="/host/edit-home/<%=home.id%>?editing=true"
+                            <a href="/home/<%=home.id%>"
                                 class="mt-6  bg-rose-500 hover:bg-rose-600 text-white p-2 rounded-xl font-semibold transition duration-300">
-                                Edit
+                                View Home
                             </a>
-                            <form action="/host/delete-home/<%= home.id %>" method="POST">
-                                <button type="submit" class="mt-6  bg-rose-500 hover:bg-rose-600 text-white p-2 rounded-xl font-semibold transition duration-300">
-                                    Delete
-                                </button>
-                            </form>
-                             
+                            
+                    <%- include('../partials/favourite',{home:home}) %>
 
                         </div>
 
